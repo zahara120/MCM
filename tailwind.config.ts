@@ -8,7 +8,7 @@ export default <Partial<Config>>{
         sans: ["Poppins", "sans-serif"],
       },
       colors: {
-        primary: colors.green,
+        primary: "#1c1a28",
         secondary: "#272334",
       },
     },
