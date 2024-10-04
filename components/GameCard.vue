@@ -10,6 +10,7 @@
                 </div>
             </div>
         </div>
-        <NuxtImg class="rounded-xl w-[250px] h-[150px] object-cover" src="/img/header1.jpg" />
+        <NuxtImg class="rounded-xl w-[250px] h-[150px] object-cover"
+            src="https://www.mmobomb.com/g/1136/thumbnail.jpg" />
     </div>
 </template>
