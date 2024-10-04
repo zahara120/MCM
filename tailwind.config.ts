@@ -9,6 +9,7 @@ export default <Partial<Config>>{
       },
       colors: {
         primary: colors.green,
+        secondary: "#272334",
       },
     },
   },
