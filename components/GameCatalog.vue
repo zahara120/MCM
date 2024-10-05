@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-secondary rounded-xl p-5 flex flex-col gap-5">
+    <div class="p-5 flex flex-col gap-5">
         <div class="flex items-center justify-between">
             <h1 class="capitalize">Wow wins</h1>
             <button
