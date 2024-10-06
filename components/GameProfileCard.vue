@@ -29,9 +29,8 @@
         </div>
       </div>
     </div>
-    <NuxtImg
-      class="rounded-full hidden md:block w-[30px] h-[30px] object-cover"
-      src="/img/header1.jpg"
-    />
+    <div class="md:block hidden bg-slate-200/30 px-2 rounded-full">
+      <span class="text-xs">Live</span>
+    </div>
   </NuxtLink>
 </template>
