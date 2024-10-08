@@ -2,6 +2,8 @@
 definePageMeta({
   layout: "page",
 });
+
+const { data } = await useFetch("/api/allGames/");
 </script>
 
 <template>
@@ -68,16 +70,9 @@ definePageMeta({
         <section
           class="grid grid-cols-2 max-h-[250px] md:max-h-[400px] overflow-auto md:grid-cols-5 gap-3"
         >
-          <GameCard />
-          <GameCard />
-          <GameCard />
-          <GameCard />
-          <GameCard />
-          <GameCard />
-          <GameCard />
-          <GameCard />
-          <GameCard />
-          <GameCard />
+          <div v-for="i in data" :key="i.id">
+            <GameCard :data="i" />
+          </div>
         </section>
 
         <!-- list of games -->
@@ -90,11 +85,12 @@ definePageMeta({
               <Icon name="bi:arrow-right-short" style="color: white" />
             </button>
           </div>
-          <div class="grid grid-cols-2 gap-5">
-            <GameProfileCard />
-            <GameProfileCard />
-            <GameProfileCard />
-            <GameProfileCard />
+          <div
+            class="grid grid-cols-2 max-h-[350px] md:max-h-[400px] overflow-auto gap-3"
+          >
+            <div v-for="i in data" :key="i.id">
+              <GameProfileCard :data="i" />
+            </div>
           </div>
         </section>
       </div>

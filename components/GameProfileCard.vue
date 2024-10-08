@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to="/detail/1"
+    :to="`/detail/${data?.id}`"
     class="bg-secondary p-5 rounded-xl flex items-center justify-between hover:bg-secondary/50 cursor-pointer"
   >
     <div
@@ -8,23 +8,29 @@
     >
       <NuxtImg
         class="rounded-full w-[50px] h-[50px] object-cover"
-        src="/img/header1.jpg"
+        :src="data?.thumbnail"
       />
       <div
-        class="flex flex-col justify-start items-center md:items-start gap-2 md:gap-1"
+        class="flex flex-col md:justify-start items-center md:items-start gap-2 md:gap-1"
       >
-        <h1 class="text-sm">game</h1>
+        <h1
+          class="text-sm text-center md:text-start max-w-[100px] max-h-[40px] truncate"
+        >
+          {{ data?.title }}
+        </h1>
         <div class="flex flex-col md:flex-row items-center md:gap-5 gap-2">
           <div class="flex items-center gap-1">
             <Icon name="catppuccin:wxt" />
-            <p class="text-xs">description</p>
+            <p class="text-xs">{{ data?.genre }}</p>
           </div>
           <div
             class="hidden md:block w-[5px] h-[5px] bg-slate-500 rounded-full"
           ></div>
           <div class="flex items-center gap-1">
             <Icon name="catppuccin:roblox" />
-            <p class="text-xs">description</p>
+            <p class="text-xs max-w-[100px] max-h-[40px] truncate">
+              {{ data?.platform }}
+            </p>
           </div>
         </div>
       </div>
@@ -34,3 +40,23 @@
     </div>
   </NuxtLink>
 </template>
+
+<script setup lang="ts">
+interface GameData {
+  id: number;
+  title: string;
+  thumbnail: string;
+  short_description: string;
+  game_url: string;
+  genre: string;
+  platform: string;
+  publisher: string;
+  developer: string;
+  release_date: string;
+  profile_url: string;
+}
+
+defineProps<{
+  data: GameData;
+}>();
+</script>
