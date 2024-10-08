@@ -21,18 +21,20 @@
         <span class="text-slate-400 text-xs">{{ data?.release_date }}</span>
       </div>
       <p class="text-slate-500 text-justify text-sm md:text-md">
-        <div v-html="data?.description" class="my-description"></div>
+        <div v-if="data?.description" v-html="data?.description" class="my-description"></div>
       </p>
+      <ImagePreview v-if="show" :data="url"/>
       <!-- image scroll -->
       <div class="flex items-center justify-center gap-2 overflow-x-auto">
         <div v-for="(screenshot, index) in data?.screenshots" :key="index">
-          <NuxtImg
-            class="w-full"
-            :src="screenshot?.image"
-          />  
+          <button @click="showImage(screenshot?.image)" class="cursor-pointer">
+            <NuxtImg
+              class="w-full hover:translate-y-[-5px] duration-300"
+              :src="screenshot?.image"
+            />
+          </button>
         </div>
       </div>
-
     </div>
   </section>
 </template>
@@ -42,6 +44,11 @@ const route = useRoute();
 definePageMeta({
   layout: "page",
 });
-
+const show = ref(false);
+const url = ref("");
 const { data } = await useFetch(`/api/detailGame/${route.params.id}`);
+const showImage = (image: string) => {
+  show.value = true;
+  url.value = image;
+}
 </script>
