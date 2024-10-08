@@ -2,7 +2,6 @@
   <header
     class="flex justify-between border-b border-slate-800 w-full h-[68px] p-5 relative"
   >
-    <!-- <div v-if="menu" class="bg-slate-800/80 w-full h-screen absolute top-0 left-0 z-10"></div> -->
     <transition
       enter-active-class="transition-opacity duration-500"
       enter-from-class="opacity-0"
@@ -19,7 +18,7 @@
     <div
       class="flex items-center gap-6 justify-between md:justify-normal w-full"
     >
-      <NuxtLink to="/">Logo</NuxtLink>
+      <NuxtLink to="/">Home</NuxtLink>
       <div class="hidden md:flex items-center gap-6 text-sm capitalize">
         <NuxtLink to="/">all games</NuxtLink>
         <NuxtLink to="/">winner of the day</NuxtLink>
