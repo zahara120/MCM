@@ -3,7 +3,7 @@
     <form
       v-if="show"
       @submit="onSubmit"
-      class="bg-secondary rounded-xl min-w-[600px] p-5 flex flex-col gap-6"
+      class="md:bg-secondary rounded-xl md:min-w-[600px] md:p-5 flex flex-col gap-6"
     >
       <div class="flex flex-col gap-2">
         <label for="name">Name</label>
