@@ -7,7 +7,10 @@ const { data } = await useFetch("/api/allGames/");
 </script>
 
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-10 gap-5 w-full p-5">
+  <div
+    class="grid grid-cols-1 md:grid-cols-10 gap-5 w-full p-5"
+    data-aos="fade-right"
+  >
     <div class="col-span-8 flex flex-col gap-5">
       <NuxtLink to="/detail/1" class="cursor-pointer">
         <NuxtImg
@@ -96,6 +99,7 @@ const { data } = await useFetch("/api/allGames/");
       </div>
     </div>
     <aside
+      data-aos="fade-left"
       class="hidden md:block sticky top-0 self-start rounded-xl col-span-2 bg-secondary w-full h-screen"
     >
       <GameCatalog />

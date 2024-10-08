@@ -4,7 +4,7 @@
       class="w-full max-h-[380px] aspect-[16/9] object-cover"
       :src="data?.thumbnail"
     />
-    <div class="p-5 flex flex-col gap-5">
+    <div class="p-5 flex flex-col gap-5" data-aos="fade-up">
       <div class="flex items-center justify-between mb-2">
         <h1 class="text-2xl">
           <a href="#">{{ data?.title }}</a>
